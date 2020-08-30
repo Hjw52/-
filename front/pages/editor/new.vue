@@ -25,6 +25,7 @@
 import debounce from 'lodash/debounce'
 import marked from 'marked'
 export default{
+   layout:"none",
     data(){
         return{
             title:'',

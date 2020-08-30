@@ -1,11 +1,15 @@
 <template>
   <div class="container"> 
-  <h2>首页</h2>
+  <ArticleItem class="articleItem"/>
+  <AuthorList class="authorList"/>
   </div>
 </template>
 
 <script>
+import ArticleItem from '../components/ArticleItem'
+import AuthorList from '../components/AuthorList'
 export default {
+  components:{ArticleItem,AuthorList},
   async mounted(){
     //  let ret = await this.$store.dispatch('userinfo');
     // //let ret =await this.$http.get('/user/info');
@@ -14,16 +18,28 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
+.articleItem{
+    position:absolute;
+    height:100px;
+    width: 50vw;
+    top: 100px;
+}
+.authorList{
+  position:absolute;
+  right: 140px;
+  top: 80px;
+}
 .container {
   margin: 0 auto;
   min-height: 100vh;
+  width:800px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #fff;
 }
-
 .title {
   font-family:
     'Quicksand',

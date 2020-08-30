@@ -69,6 +69,11 @@
 </template>
 <script>
 export default{
+  data(){
+    return{
+      input2:""
+    }
+  },
   mounted(){
  const token = localStorage.getItem('token')
     if(token){
