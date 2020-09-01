@@ -2,10 +2,10 @@
 <div class="item">
 <div class="meta-head">
 <p>kaka</p>
-<p>15小时前</p>
+<p>{{article.updatedAt}}</p>
 <p>web前端</p>
 </div>
-<div class="title">Vue与React十大对比</div>
+<div class="title">{{article.title}}</div>
 <img src="../assets/articlex1.jpg"/>
 <div class="buttom">
 <i class="el-icon-star-on">18</i>
@@ -17,14 +17,16 @@
 
 <script>
 export default {
- 
+    props:{
+        article:{
+            type:Object
+        }
+    }
 }
 </script>
 <style scoped>
 .item{
-    left:0;
-    height:120px;
-    width:100%;
+   
     cursor: pointer;
     background: #fff;
 }
@@ -43,7 +45,9 @@ export default {
 .title{
     position:relative;
     margin-top:20px;
-   right:250px;
+    display:flex;
+    justify-content: flex-start;
+    left:30px;
     font-size: 1.4rem;
     font-weight: 600;
     line-height: 1.2;

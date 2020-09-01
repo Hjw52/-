@@ -6,11 +6,13 @@ class ArticleController extends BaseController{
         const {ctx}=this
         const{id}=ctx.params
         let info=await ctx.model.Article.findOneAndUpdate({_id:id}, {$inc:{'views':1}}).populate('author')
+        console.log('调用detail')
         this.success(info)
     }
     async create(){
         const {ctx}=this
         const {userid}=ctx.state
+        console.log(userid)
         const {title,content}=ctx.request.body;
         let obj={
             title:title,
@@ -26,6 +28,11 @@ class ArticleController extends BaseController{
         }else{
             this.error('发布失败')
         }
+    }
+    async info(){
+        const {ctx}=this;
+        const articles=await ctx.model.Article.find().populate('author');
+        this.success(articles);
     }
 }
 module.exports = ArticleController

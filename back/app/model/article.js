@@ -15,6 +15,6 @@ module.exports = app=>{
           require:true
       },
       views:{type:Number, required:false, default:1}
-    })
+    }, { timestamps:true})
     return mongoose.model('Article', ArticleSchema)
   }

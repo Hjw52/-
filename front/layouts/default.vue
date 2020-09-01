@@ -29,10 +29,10 @@
       
       
      
-      <el-menu-item v-if="!userinfo._id" index="11" class="pull-right">
+      <el-menu-item v-if="userinfo._id" index="11" class="pull-right">
        <el-dropdown trigger="click">
        <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
-       <i>用户名</i>
+       <i>{{userinfo.nickname}}</i>
        <el-dropdown-menu slot="dropdown">
         <el-dropdown-item >
          <nuxt-link :to="'/user/'+userinfo._id"><i class="el-icon-user"></i>我的主页</nuxt-link>
@@ -41,12 +41,16 @@
         <el-dropdown-item ><i class="el-icon-thumb"></i>我赞过的</el-dropdown-item>
         <el-dropdown-item ><i class="el-icon-star-on"></i>我的收集</el-dropdown-item>
         <el-dropdown-item ><i class="el-icon-s-tools"></i>设置</el-dropdown-item>
-        <el-dropdown-item ><i class="el-icon-back"></i>退出</el-dropdown-item>
+        <el-dropdown-item >
+         <nuxt-link to="/login">
+        <i class="el-icon-back"></i>退出
+         </nuxt-link>
+        </el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
       </el-menu-item>
       
-      <el-menu-item v-if="!userinfo._id" index="12" class="pull-right">
+      <el-menu-item v-if="userinfo._id" index="12" class="pull-right">
         <nuxt-link to="/editor/new">
           <el-button type="success" round>写文章</el-button>
         </nuxt-link>
@@ -79,14 +83,15 @@ export default{
     if(token){
       // 比如这个接口，是需要登录才能访问的
       //dispatch 路径
-     // this.$store.dispatch('user/info')
+      this.$store.dispatch('user/info')
     }
   },
   computed:{
     userinfo(){
       return this.$store.state.user
     }
-  }
+  },
+  
 }
 </script>
 <style>

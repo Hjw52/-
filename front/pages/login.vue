@@ -75,14 +75,6 @@ export default {
    handleLogin(){
        this.$refs.form.validate( async valid=>{
           if(valid){
-        //    let ret = await this.$http.post('/user/login',{
-        //    tel:this.form.tel,
-        //    password:md5(this.form.password)
-        //  })
-        // let ret = await this.$store.dispatch('login',{
-        //   tel:this.form.tel,
-        //   password:md5(this.form.password)
-        // })
         let ret = await this.$store.dispatch('user/login',{
           tel:this.form.tel,
           password:md5(this.form.password)
@@ -106,17 +98,6 @@ export default {
       } 
     }
      })
-      
-      // return 
-      // let ret = await this.$http.post('/user/login',{
-      //   email:this.form.email,
-      //   password:md5(this.form.password)
-      // })
-      // if(ret.code==0){
-      //   localStorage.setItem('token',ret.data.token)
-
-      // }
-      // console.log('登录',ret)
     }
   }
 }

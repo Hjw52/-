@@ -77,7 +77,7 @@ export default{
 .write-btn{
     position: absolute;
     z-index: 2;
-    right: 20px;
-    top: 80px;
+    right: 10px;
+    top: 0px;
 }
 </style>

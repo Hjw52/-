@@ -7,14 +7,29 @@
     <el-tab-pane label="专栏" name="fourth"/>
     <el-tab-pane label="为你推荐" name="five"/>
   </el-tabs>
-    <Item v-for="index in 5" :key="index"/>
+    <Item v-for="item in articles" :key="item._id" :article=item />
 </div>
 </template>
 
 <script>
 import Item from '../components/Item'
 export default {
-  components:{Item}
+  components:{Item},
+  created(){
+    this.getArticle();
+  },
+  data(){
+    return{
+      articles:[]
+    }
+  },
+  methods:{
+    async getArticle(){
+      let ret= await this.$store.dispatch('article/info');
+      this.articles=ret.data;
+       console.log(this.articles);
+    }
+  }
 }
 </script>
 <style scoped>

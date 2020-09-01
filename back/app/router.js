@@ -15,8 +15,9 @@ module.exports = app => {
   router.get('/user/info',jwt, controller.user.info);
   //文章相关
   router.group({ name:'article',prefix:'/article'},router=>{
-    let {detail,create}=controller.article
+    let {detail,create,info}=controller.article
     router.post('/create',jwt,create)
+    router.get('/info',info)
     router.get('/:id',detail)
   })
 };

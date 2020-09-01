@@ -26,14 +26,14 @@ export default {
     top: 100px;
 }
 .authorList{
-  position:absolute;
-  right: 140px;
-  top: 80px;
+  position:relative;
+  right: -520px;
+  top: -200px;
 }
 .container {
   margin: 0 auto;
   min-height: 100vh;
-  width:800px;
+  width:50vw;
   display: flex;
   justify-content: center;
   align-items: center;
