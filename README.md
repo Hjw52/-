@@ -6,7 +6,7 @@
 
 - 后端：egg.js （node MVC）
 
-  [官方文档]: https://eggjs.org/zh-cn/
+  [官方文档]: (https://eggjs.org/zh-cn/)
 
 - 前端：nuxt.js （服务端渲染）
 
