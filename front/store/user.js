@@ -22,8 +22,10 @@ const mutations={
 const actions={
     login:async({state,commit},data)=>{
         let ret = await http.post('/user/login',data)
-        localStorage.setItem('token', ret.data.token)
-        commit('SET_TOKEN', ret.data.token)
+        if(ret.code!=-1){
+            localStorage.setItem('token', ret.data.token)
+            commit('SET_TOKEN', ret.data.token)
+        }
         return ret
     },
     info:async({state,commit},data)=>{

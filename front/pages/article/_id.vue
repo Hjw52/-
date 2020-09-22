@@ -1,35 +1,32 @@
 <template>
   <div>
-      <div></div>
+    <h2 v-html="this.$store.state.article.title"/>
+      <div v-html="this.$store.state.article.article_html"></div>
   </div>
 </template>
-<seript>
+<script>
 export default{
   data(){
     return{
       article:{
+        id:'',
         title:'',
         views:1,
-        author:{
-
-        }
+        article_html:'',
+        author:{}
       }
     }
   },
-    beforeCreated(){
-      console.log(1)
+    mounted(){
       let {id}=this.$route.params;
-      this.id=id;
-      this.getArticle(id);
+      this.article.id=id;
+      this.getArticle();
     },
     methods:{
-      async getArticle(id){
-            console.log('调用');
-          let ret = await this.$http.get('/article/'+id)
-        // let ret= await this.$store.dispatch('article/datail',this.id)
-         this.article = ret.data
-         console.log(this.article)
+      async getArticle(){
+        let ret= await this.$store.dispatch('article/detail',this.article.id)
+        console.log(this.$store.state.article)
       }
     }
 }
-</seript>
+</script>

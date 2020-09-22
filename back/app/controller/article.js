@@ -11,14 +11,14 @@ class ArticleController extends BaseController{
     }
     async create(){
         const {ctx}=this
-        const {userid}=ctx.state
-        console.log(userid)
+        const {id,}=ctx.state
+        console.log(id);
         const {title,content}=ctx.request.body;
         let obj={
             title:title,
             article:content,
             article_html:marked(content),
-            author:userid
+            author:id
         }
         let ret=await ctx.model.Article.create(obj);
         if(ret._id){

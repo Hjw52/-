@@ -8,7 +8,7 @@ module.exports = ({app})=>{
         let ret = await app.jwt.verify(token, app.config.jwt.secret)
         console.log('中间件解密token信息',ret)
         ctx.state.tel = ret.tel
-       // ctx.state.userid = ret._id
+        ctx.state.id = ret._id
         await next()
       }catch(err){
         if(err.name=="TokenExpiredError"){

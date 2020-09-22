@@ -1,14 +1,14 @@
 <template>
 <div class="item">
 <div class="meta-head">
-<p>kaka</p>
-<p>{{article.updatedAt}}</p>
-<p>web前端</p>
+<p>{{article.author.nickname}}</p>
+<p>{{FormatDate(article.updatedAt)}}</p>
+<p></p>
 </div>
 <div class="title">{{article.title}}</div>
 <img src="../assets/articlex1.jpg"/>
 <div class="buttom">
-<i class="el-icon-star-on">18</i>
+<i class="el-icon-star-on">{{article.views}}</i>
 <i class="el-icon-share" style="margin-left:10px">分享</i>
 </div>
  <el-divider class="diver"/>
@@ -16,11 +16,15 @@
 </template>
 
 <script>
+import {FormatDate} from '../utils/tools'
 export default {
     props:{
         article:{
             type:Object
         }
+    },
+    methods:{
+        FormatDate
     }
 }
 </script>

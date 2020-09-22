@@ -8,7 +8,7 @@ module.exports = app=>{
       tel: {type:String, required:true},
       password: {type:String, required:true, select:false},
       nickname: {type:String, required:true},
-      avatar: {type:String, required:false, default:'/user.png'}
+      avatar: {type:String, required:false, default:'/user.png'},
       // 关注用户
       // 喜欢的文章
     }, { timestamps:true})

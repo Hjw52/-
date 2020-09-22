@@ -3,15 +3,19 @@ const state=()=>({
     _id:'',
     title:'',
     article_html:'',
-    author:''
+    author:'',
+    time:'',
+    views:''
 })
  
 const mutations={
     SET_ARTICLE(state,artilce={}){
         state._id=artilce._id
         state.title=artilce.title
+        state.views=artilce.views
         state.article_html=artilce.article_html
         state.author = artilce.author
+        state.time=artilce.updateAt
     }
 }
 

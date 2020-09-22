@@ -65,7 +65,7 @@ export default {
   },
   proxy:{
     '/api/':{
-      target:'http://localhost:7001',
+      target:'http://localhost:7002',
       secure:false,
       pathRewrite:{
         '^/api':''

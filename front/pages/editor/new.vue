@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="write-btn">
-      <el-button @click="submit" type="primary">发布</el-button>
+      <el-button @click="submit" type="success">发布</el-button>
     </div>
     <el-row>
     <el-col :span="24">
@@ -11,7 +11,8 @@
     <el-row>
       <el-col :span="12">
         <!-- markdown编辑器 -->
-        <textarea class="md-editor" :value="content"  @input="update"></textarea>
+        <Editor v-model="content"  @change="update"/>
+        <!-- <textarea class="md-editor" :value="content"  @input="update"></textarea> -->
       </el-col>
       <el-col :span="12">
         <div class="markdown-body" v-html="compiledHtml">
@@ -24,8 +25,10 @@
 <script>
 import debounce from 'lodash/debounce'
 import marked from 'marked'
+import Editor from '../../components/editor'
 export default{
    layout:"none",
+   components:{Editor},
     data(){
         return{
             title:'',
@@ -37,8 +40,8 @@ export default{
     },
     methods:{
         update:debounce(function(e){
-            this.content=e.target.value
-        },150),
+            this.content=e;
+        },100),
         async submit(){
             let ret = await this.$http.post('/article/create',{title:this.title,content:this.content})
             if(ret.code==0){
@@ -77,7 +80,7 @@ export default{
 .write-btn{
     position: absolute;
     z-index: 2;
-    right: 10px;
+    right: 5px;
     top: 0px;
 }
 </style>
