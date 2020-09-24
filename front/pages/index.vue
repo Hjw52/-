@@ -12,7 +12,6 @@ export default {
   components:{ArticleItem,AuthorList},
   async mounted(){
     //  let ret = await this.$store.dispatch('userinfo');
-    // //let ret =await this.$http.get('/user/info');
     // console.log(ret);
   }
 }
@@ -33,6 +32,7 @@ export default {
 .container {
   margin: 0 auto;
   min-height: 100vh;
+   min-width:506px;
   width:50vw;
   display: flex;
   justify-content: center;
@@ -57,7 +57,6 @@ export default {
   color: #35495e;
   letter-spacing: 1px;
 }
-
 .subtitle {
   font-weight: 300;
   font-size: 42px;

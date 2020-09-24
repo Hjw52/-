@@ -13,3 +13,12 @@
 npm run dev
 ```
 
+### 大体界面
+
+主页：
+
+![image-20200924222706743](E:\Git工作区\myblo\images\image-20200924222706743.png)
+
+博客页：
+
+![image-20200924222828529](E:\Git工作区\myblo\images\image-20200924222828529.png)

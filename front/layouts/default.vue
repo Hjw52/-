@@ -1,6 +1,6 @@
 <template>
   <el-container>
-  <el-header style="background-color: #FFF">
+  <el-header style="background-color: #FFF;min-width:1500px">
     <el-menu mode="horizontal">
       <el-menu-item index="1">
        <Logo class='logo'/>  
@@ -28,7 +28,6 @@
       </el-menu-item>
       
       
-     
       <el-menu-item v-if="userinfo._id" index="11" class="pull-right">
        <el-dropdown trigger="click">
        <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
@@ -64,7 +63,7 @@
    </el-menu-item>
     </el-menu>
   </el-header>
-  <el-main>
+  <el-main style="overflow: hidden;">
     <nuxt />
   </el-main>
   <el-footer>
@@ -126,6 +125,7 @@ a{
     text-decoration: none;
     color: inherit;
 }
+.el-mian{overflow: hidden;}
 .el-menu-item { transition: none !important; }
 .el-menu--horizontal > .el-menu-item.is-active {
   border-bottom: none;

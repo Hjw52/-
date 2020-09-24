@@ -1,5 +1,5 @@
 <template>
-<div class="item">
+<div class="item" @click="getArticle">
 <div class="meta-head">
 <p>{{article.author.nickname}}</p>
 <p>{{FormatDate(article.updatedAt)}}</p>
@@ -24,7 +24,10 @@ export default {
         }
     },
     methods:{
-        FormatDate
+        FormatDate,
+        getArticle(){
+             this.$router.push({path:"/article/"+this.article._id})
+        }
     }
 }
 </script>
@@ -62,7 +65,7 @@ p{
 }
 img{
     top: -40px;
-    right: -250px;
+    margin-right: -400px;
     width: auto;
     height: auto; 
     max-width: 100%; 
@@ -73,9 +76,8 @@ img{
     border-radius:2px;
 }
 .buttom{
-    margin-top:-60px;
-     position: relative;
-    margin-left:-640px;
+    margin-top: -6%;
+    margin-left: -82%;
 }
 .diver{
      margin-top:10px !important;

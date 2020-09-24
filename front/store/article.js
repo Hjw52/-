@@ -15,7 +15,7 @@ const mutations={
         state.views=artilce.views
         state.article_html=artilce.article_html
         state.author = artilce.author
-        state.time=artilce.updateAt
+        state.time=artilce.createdAt
     }
 }
 

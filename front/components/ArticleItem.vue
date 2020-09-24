@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="min-width:506px; background: #fff;">
   <el-tabs class="head">
     <el-tab-pane label="热门" name="first"/>
     <el-tab-pane label="最新" name="second"/>

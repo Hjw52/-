@@ -6,13 +6,13 @@ class ArticleController extends BaseController{
         const {ctx}=this
         const{id}=ctx.params
         let info=await ctx.model.Article.findOneAndUpdate({_id:id}, {$inc:{'views':1}}).populate('author')
-        console.log('调用detail')
+        console.log(info)
         this.success(info)
     }
     async create(){
         const {ctx}=this
         const {id,}=ctx.state
-        console.log(id);
+        //console.log(id);
         const {title,content}=ctx.request.body;
         let obj={
             title:title,

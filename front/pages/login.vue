@@ -33,9 +33,8 @@
 
         </el-input>
       </el-form-item>
-
-
- <el-form-item style="border:0px">
+  <el-checkbox v-model=" checked " style="color:#a0a0a0;margin-top:0px;">记住密码</el-checkbox>
+ <el-form-item style="border:0px;margin-top:10px;">
       <el-button type="primary" @click.native.prevent="handleLogin">
         登录
       </el-button>
@@ -56,6 +55,7 @@ export default {
 
   data(){
     return{
+      checked:'',
       form:{
         tel:'',
         password:''
@@ -69,6 +69,16 @@ export default {
           {required:true,message:'请输入密码',trigger: 'blur'}
         ]
       }
+    }
+  },
+  created(){
+    let vm=this;
+    let name=vm.getCookies("name");
+    let password=vm.getCookies("password");
+    if(name){
+      vm.form.tel=name;
+      vm.form.password=password;
+      vm.checked=true;
     }
   },
   methods:{
@@ -86,7 +96,12 @@ export default {
           title:'登录成功',
           type:'success',
           duration: 2000
-        })
+        });
+    
+        if(this.checked==true){
+          //设置cookies
+          this.setCookie(this.form.tel,this.form.password,7)
+        }
         setTimeout(()=>{
           this.$router.push({path:"/"})
         },1000)
@@ -98,6 +113,24 @@ export default {
       } 
     }
      })
+    },
+    setCookie(tel,password,days){
+        var date=new Date();
+        date.setTime(date.getTime()+24*60*60*1000*days);
+        window.document.cookie='name'+'='+tel+";path=/;expires="+date.toGMTString();
+        window.document.cookie='password'+'='+password+";path=/;expires="+date.toGMTString();
+    },
+    getCookies:function(key){
+      if(document.cookie.length>0){
+        var cookie=document.cookie;
+        var start=cookie.indexOf(key+'=');
+        if(start!==-1){
+          start = start + key.length + 1
+          var end = cookie.indexOf(';', start)
+          if (end === -1) end = cookie.length
+          return unescape(cookie.substring(start, end))
+        }
+      }
     }
   }
 }
