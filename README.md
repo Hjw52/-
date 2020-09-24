@@ -17,8 +17,8 @@ npm run dev
 
 主页：
 
-![](E:\Git工作区\myblo\images\image-20200924222706743.png)
+![](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20200924222706743.png?raw=true)
 
 博客页：
 
-![](E:\Git工作区\myblo\images\image-20200924222828529.png)
+![](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20200924222706743.png?raw=true)
