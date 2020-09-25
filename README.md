@@ -20,5 +20,4 @@ npm run dev
 ![](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20200924222706743.png?raw=true)
 
 博客页：
-
-![](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20200924222706743.png?raw=true)
+![](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20200924222828529.png)
