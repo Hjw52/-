@@ -30,11 +30,10 @@
   }
 }
 .login-container {
-  min-height: 100%;
+  max-height: 100%;
   width: 100%;
   overflow: hidden;
   margin: auto;
-
   .login-form {
     position: relative;
     width: 520px;
@@ -43,7 +42,7 @@
     margin: 0 auto;
     overflow: hidden;
     margin-top: -100px;
-    margin-bottom: 100px;
+    margin-bottom: 15%;
   }
 
   .tips {

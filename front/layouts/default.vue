@@ -63,8 +63,8 @@
    </el-menu-item>
     </el-menu>
   </el-header>
-  <el-main style="overflow: hidden;">
-    <nuxt />
+  <el-main style="overflow: hidden; padding: 0;">
+    <nuxt/>
   </el-main>
   <el-footer>
   </el-footer>

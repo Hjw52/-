@@ -27,7 +27,7 @@ export default {
     async getArticle(){
       let ret= await this.$store.dispatch('article/info');
       this.articles=ret.data;
-       console.log(this.articles);
+       //console.log(this.articles);
     }
   }
 }

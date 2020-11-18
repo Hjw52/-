@@ -2,9 +2,11 @@
   <div class="acticleDetail">
     <div class="userinfo">
        <el-avatar src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png" :size="60"></el-avatar>
-       <span class="username">{{this.$store.state.article.author.nickname}}</span>
+       <!-- 这边this.$store.state.article.author.nickname不能直接用 不知道什么bug -->
+       <!-- <span class="username">{{this.$store.state.article.author.nickname}}</span> -->
+         <span class="username">{{this.article.author.nickname}}</span>
        <div class="meta">
-         <span>{{FormatDate(this.$store.state.article.time)}}</span>
+            <span>{{FormatDate(this.$store.state.article.time)}}</span>
          <span style="margin-left:10px">阅读量{{this.$store.state.article.views}}</span>
        </div>
        <el-row style="left: 85%;top: -50px;position: relative;">
@@ -14,7 +16,7 @@
     <div class="title">
        <h1 v-html="this.$store.state.article.title"/>
     </div>
-  <el-divider style="opacity: 0.3;"></el-divider>
+  <el-divider ></el-divider>
      <div class="content"  v-html="this.$store.state.article.article_html"></div>
   </div>
 </template>
@@ -33,6 +35,9 @@ export default{
     }
   },
     created(){
+      if(process.server){
+        return ;
+      }
       let {id}=this.$route.params;
       this.article.id=id;
       this.getArticle();
@@ -41,7 +46,8 @@ export default{
       FormatDate,
       async getArticle(){
         let ret= await this.$store.dispatch('article/detail',this.article.id)
-        console.log(this.$store.state.article)
+        this. article.author=ret.data.author;
+       // console.log(this.$store.state.article.author)
       }
     }
 }
@@ -81,4 +87,5 @@ export default{
    margin-left: 40px;
    margin-bottom: 30px;
 }
+.el-divider {opacity: 0.3;}
 </style>

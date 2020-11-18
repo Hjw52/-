@@ -1,4 +1,5 @@
 <template>
+<div class="total">
     <div class="login-container">
     <div class="title-container">
         <Logo style='margin-top: 20px;' />  
@@ -47,12 +48,12 @@
     </el-form>
     
   </div>
+  </div>
 </template>
 <script>
 const md5 = require('md5')
 export default {
   layout:"login",
-
   data(){
     return{
       checked:'',
@@ -135,3 +136,26 @@ export default {
   }
 }
 </script>
+<style scoped>
+.total{
+  background: linear-gradient( #99CCCC,#00FFCC);
+}
+ .el-input__inner::placeholder {
+        color: #fff;
+        
+    }
+     /* 谷歌 */
+    .el-input__inner::-webkit-input-placeholder {
+        color: #fff;
+       
+    }
+     /* 火狐 */
+   .el-input__inner:-moz-placeholder {
+        color: #fff;
+       
+    }
+     /*ie*/
+   .el-input__inner:-ms-input-placeholder {
+        color: #fff;
+    }
+</style>
