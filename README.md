@@ -17,9 +17,9 @@ npm run dev
 
 登录注册页：
 
-![image-20201118210047037](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201118210047037.png)
+![image-20201118210047037](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20201118210047037.png?raw=true)
 
-![image-20201118210119337](C:\Users\DELL\AppData\Roaming\Typora\typora-user-images\image-20201118210119337.png)
+![image-20201118210119337](https://github.com/Hjw52/juejin-s-Style-Blog/blob/master/images/image-20201118210119337.png?raw=true)
 
 主页：
 
